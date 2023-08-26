@@ -16,10 +16,18 @@ body {
     }
 }
 
+footer {
+    > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
 /*
     Show loading indicator on div or on button
 */
-button.htmx-request, 
+button.htmx-request,
 div.htmx-indicator {
     pointer-events: none;
 

@@ -2448,6 +2448,12 @@ body > footer {
   padding: 1rem 0;
 }
 
+footer > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /*
     Show loading indicator on div or on button
 */
