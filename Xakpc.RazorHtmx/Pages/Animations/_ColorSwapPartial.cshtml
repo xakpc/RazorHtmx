@@ -1,0 +1,6 @@
+﻿@model string
+
+<div id="color-demo" class="smooth" style="color:@Model"
+     hx-get="@Url.Handler("Colors")" hx-swap="outerHTML" hx-trigger="every 1s">
+    Color Swap Demo
+</div>

@@ -1,0 +1,27 @@
+﻿@model Progress
+
+<div hx-trigger="done" hx-get="@Url.Handler("Progress")" hx-swap="outerHTML" hx-target="this">
+    @if (Model.Done)
+    {
+        <h3 role="status" tabindex="-1" autofocus>Complete</h3>
+    }
+    else
+    {
+        <h3 role="status" tabindex="-1" autofocus>Running</h3>
+    }
+
+    <div
+        hx-get="@Url.Handler("Progress")"
+        hx-trigger="@(Model.Done ? "none" : "every 600ms")"
+        hx-target="this"
+        hx-swap="innerHTML">
+        <partial name="_ProgressBarPartial" model="@Model.Value"/>
+    </div>
+
+    @if (Model.Done)
+    {
+        <button hx-post="@Url.Handler("Start")" antiforgery="true" classes="add show:600ms">
+            Restart Job
+        </button>
+    }
+</div>

@@ -1,0 +1,44 @@
+﻿@page "/bulk-update"
+@model BulkUpdateModel
+
+<article>
+
+    <div hx-include="#checked-contacts" hx-target="#tbody" class="grid">
+        <button hx-put="@Url.Page("BulkUpdate", "Activate")" antiforgery="true">Activate</button>
+        <button hx-put="@Url.Page("BulkUpdate", "Deactivate")" antiforgery="true" class="secondary">Deactivate</button>
+    </div>
+
+    <form id="checked-contacts">
+        <table>
+            <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody id="tbody">
+            @await Html.PartialAsync("_TableBody", Model.TableUsers)
+            </tbody>
+        </table>
+    </form>
+
+</article>
+
+@section Styles
+{
+    <style scoped="">
+    .htmx-settling tr.deactivate td {
+        background: lightcoral !important;
+    }
+
+    .htmx-settling tr.activate td {
+            background: darkseagreen !important;
+    }
+
+    tr td {
+            transition: all 1.2s !important;
+    }
+</style>
+}

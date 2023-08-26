@@ -1,0 +1,11 @@
+﻿@model (string Header, string Text)
+
+<header>
+    <a href="#close" aria-label="Close" class="close" onclick="closeDialog(); return false;"></a>
+    @Model.Header
+</header>
+<div>
+    <p>
+        @Model.Text
+    </p>
+</div>

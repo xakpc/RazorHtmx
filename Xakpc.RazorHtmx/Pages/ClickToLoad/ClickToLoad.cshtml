@@ -1,0 +1,17 @@
+﻿@page "/click-to-load"
+@model ClickToLoadModel
+
+<article>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>RowId</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        @await Html.PartialAsync("_TableBody", Model.UsersTable)
+        </tbody>
+    </table>
+</article>

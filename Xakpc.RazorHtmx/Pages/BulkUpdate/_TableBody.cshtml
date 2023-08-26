@@ -1,0 +1,27 @@
+﻿@model UsersTableViewModel
+
+@functions {
+
+    private static string GetClass(int userInfoId, Dictionary<int, bool> modelUsersWasActivated)
+    {
+        if (modelUsersWasActivated.TryGetValue(userInfoId, out var wasActivated))
+        {
+            return wasActivated ? "activate" : "deactivate";
+        }
+
+        return "";
+    }
+
+}
+
+@foreach (var userInfo in Model.Users)
+{
+    <tr class="@GetClass(userInfo.Id, Model.UsersWasActivated)">
+        <td>
+            <input type="checkbox" name="ids" value="@userInfo.Id">
+        </td>
+        <td>@userInfo.FirstName @userInfo.LastName</td>
+        <td>@userInfo.Email</td>
+        <td>@userInfo.Status</td>
+    </tr>
+}

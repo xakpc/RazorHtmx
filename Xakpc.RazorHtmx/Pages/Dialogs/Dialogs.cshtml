@@ -1,0 +1,14 @@
+﻿@page "/dialogs"
+@model DialogsModel
+
+<div>
+    <button class="btn"
+            hx-post="@Url.Page("Dialogs")"
+            hx-prompt="Enter a string"
+            hx-confirm="Are you sure?"
+            hx-target="#response"
+            antiforgery="true">
+        Prompt Submission
+    </button>
+    <div id="response"></div>
+</div>

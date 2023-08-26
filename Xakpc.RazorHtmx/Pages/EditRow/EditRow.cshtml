@@ -1,0 +1,31 @@
+﻿@page
+@model EditRowModel
+@{
+}
+
+<article>
+    <table>
+        <thead>
+        <tr>
+            <th style="width: 40%;">Name</th>
+            <th style="width: 40%;">Email</th>
+            <th style="width: 20%;"></th>
+        </tr>
+        </thead>
+        <tbody hx-target="closest tr" hx-swap="outerHTML">
+        @foreach (var userInfo in Model.Users)
+        {
+            @await Html.PartialAsync("_TableRow", userInfo)
+        }
+        </tbody>
+    </table>
+</article>
+
+@section Styles
+{
+    <style>
+        button {
+            margin-bottom: 0px;
+        }
+    </style>
+}

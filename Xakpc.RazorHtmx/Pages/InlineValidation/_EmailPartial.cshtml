@@ -1,0 +1,18 @@
+﻿@model Xakpc.RazorHtmx.Data.UserInfoViewModel
+
+@{
+    var emailErrors = ViewData.ModelState[nameof(Model.Email)]?.Errors;
+}
+
+<label>Email <small id="ind" class="htmx-indicator" aria-busy="true"></small></label>
+<input type="email" asp-for="@Model.Email" hx-post="@Url.Handler("Email")" hx-indicator="#ind">
+
+@if (emailErrors is { Count: > 0 })
+{
+    @foreach (var error in emailErrors)
+    {
+        <small>
+            <mark>@error.ErrorMessage</mark>
+        </small>
+    }
+}

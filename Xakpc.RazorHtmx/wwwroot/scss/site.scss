@@ -1,3 +1,5 @@
+$enable-transitions: false;
+
 @import "../lib/pico-1.5.10/scss/pico";
 @import "./error.scss";
 
@@ -11,5 +13,40 @@ body {
 
     > footer {
         padding: 1rem 0;
+    }
+}
+
+/*
+    Show loading indicator on div or on button
+*/
+button.htmx-request, 
+div.htmx-indicator {
+    pointer-events: none;
+
+    &::before {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        border: 0.1875em solid currentColor;
+        border-radius: 1em;
+        border-right-color: transparent;
+        content: "";
+        vertical-align: text-bottom;
+        vertical-align: -.125em; // Visual alignment
+        animation: spinner 0.75s linear infinite;
+        opacity: var(--loading-spinner-opacity);
+    }
+
+    &:not(:empty) {
+        &::before {
+            margin-right: calc(var(--spacing) * 0.5);
+            margin-left: 0;
+            margin-inline-start: 0;
+            margin-inline-end: calc(var(--spacing) * 0.5);
+        }
+    }
+
+    &:empty {
+        text-align: center;
     }
 }

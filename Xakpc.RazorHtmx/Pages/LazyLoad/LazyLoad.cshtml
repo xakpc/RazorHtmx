@@ -1,0 +1,10 @@
+﻿@page "/lazy-load"
+@model LazyLoadModel
+@{
+}
+
+<article>
+    <div hx-get="@Url.Handler("Graph")" hx-trigger="load">
+        <div class="htmx-indicator"></div>
+    </div>
+</article>

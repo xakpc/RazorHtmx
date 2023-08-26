@@ -1,0 +1,24 @@
+﻿@page "/inline-validation"
+@model InlineValidationModel
+@{
+}
+
+<article>
+    <hgroup>
+        <h3>Signup Form</h3>
+        <h4>Enter an email into the input below and on tab out it will be validated. Only "test@test.com" will pass</h4>
+    </hgroup>
+    <form hx-post="@Url.Page("InlineValidation")" asp-antiforgery="true">
+        <div hx-target="this" hx-swap="outerHTML">
+            <partial name="_EmailPartial" model="@Model.UserInfo"/>
+        </div>
+
+        <label asp-for="UserInfo.FirstName"></label>
+        <input type="text" asp-for="UserInfo.FirstName">
+
+        <label asp-for="UserInfo.FirstName"></label>
+        <input type="text" asp-for="UserInfo.LastName">
+
+        <button disabled>Submit</button>
+    </form>
+</article>

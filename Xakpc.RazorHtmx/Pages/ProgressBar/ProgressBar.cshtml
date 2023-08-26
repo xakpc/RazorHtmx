@@ -1,0 +1,11 @@
+﻿@page "/progress-bar"
+@model ProgressBarModel
+
+<article>
+    <div hx-target="this" hx-swap="outerHTML">
+        <h3>Start Progress</h3>
+        <button hx-post="@Url.Handler("Start")" antiforgery="true">
+            Start Job
+        </button>
+    </div>
+</article>

@@ -1,0 +1,24 @@
+﻿@model Xakpc.RazorHtmx.Pages.ClickToLoad.PagedTableViewModel
+
+@foreach (var userInfo in Model.Users)
+{
+    @if (userInfo == Model.Users.Last())
+    {
+        <tr hx-get="@Url.Page("InfiniteScroll", "Page", new { page = Model.Page + 1 })"
+            hx-trigger="revealed"
+            hx-swap="afterend"
+            hx-indicator="#ind">
+            <td>@userInfo.FirstName @userInfo.LastName</td>
+            <td>@userInfo.Email</td>
+            <td>@userInfo.RowId.ToString("N").ToUpperInvariant()</td>
+        </tr>
+    }
+    else
+    {
+        <tr>
+            <td>@userInfo.FirstName @userInfo.LastName</td>
+            <td>@userInfo.Email</td>
+            <td>@userInfo.RowId.ToString("N").ToUpperInvariant()</td>
+        </tr>
+    }
+}

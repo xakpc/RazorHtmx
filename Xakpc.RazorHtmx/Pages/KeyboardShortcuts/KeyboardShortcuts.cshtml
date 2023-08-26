@@ -1,0 +1,16 @@
+﻿@page "/keyboard-shortcuts"
+@model KeyboardShortcutsModel
+
+<article>
+
+    <button hx-trigger="click, keyup[altKey&&shiftKey&&key=='C'] from:body"
+            hx-get="@Url.Handler("DoIt1")">
+        Do It! (alt-shift-C)
+    </button>
+
+    <button hx-trigger="click, keyup[altKey&&shiftKey&&key=='D'] from:body"
+            hx-get="@Url.Handler("DoIt2")">
+        Do It! (alt-shift-D)
+    </button>
+
+</article>

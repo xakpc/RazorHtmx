@@ -709,7 +709,6 @@ a,
   background-color: var(--background-color);
   color: var(--color);
   text-decoration: var(--text-decoration);
-  transition: background-color var(--transition), color var(--transition), text-decoration var(--transition), box-shadow var(--transition);
 }
 a:is([aria-current], :hover, :active, :focus),
 [role=link]:is([aria-current], :hover, :active, :focus) {
@@ -954,7 +953,6 @@ input[type=reset],
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
-  transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 button:is([aria-current], :hover, :active, :focus),
 input[type=submit]:is([aria-current], :hover, :active, :focus),
@@ -1168,7 +1166,6 @@ textarea {
   box-shadow: var(--box-shadow);
   color: var(--color);
   font-weight: var(--font-weight);
-  transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 
 input:not([type=submit], [type=button], [type=reset], [type=checkbox], [type=radio], [readonly]):is(:active, :focus),
@@ -1365,7 +1362,6 @@ label > :where(input, select, textarea) {
   border-radius: 50%;
   background-color: var(--color);
   content: "";
-  transition: margin 0.1s ease-in-out;
 }
 [type=checkbox][role=switch]:checked {
   background-image: none;
@@ -1476,7 +1472,6 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
-  transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 [type=file]::file-selector-button:is(:hover, :active, :focus) {
   --background-color: var(--secondary-hover);
@@ -1502,7 +1497,6 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
-  transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 [type=file]::-webkit-file-upload-button:is(:hover, :active, :focus) {
   --background-color: var(--secondary-hover);
@@ -1528,7 +1522,6 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
-  transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 [type=file]::-ms-browse:is(:hover, :active, :focus) {
   --background-color: var(--secondary-hover);
@@ -1548,21 +1541,18 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   height: 0.25rem;
   border-radius: var(--border-radius);
   background-color: var(--range-border-color);
-  transition: background-color var(--transition), box-shadow var(--transition);
 }
 [type=range]::-moz-range-track {
   width: 100%;
   height: 0.25rem;
   border-radius: var(--border-radius);
   background-color: var(--range-border-color);
-  transition: background-color var(--transition), box-shadow var(--transition);
 }
 [type=range]::-ms-track {
   width: 100%;
   height: 0.25rem;
   border-radius: var(--border-radius);
   background-color: var(--range-border-color);
-  transition: background-color var(--transition), box-shadow var(--transition);
 }
 [type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -1573,7 +1563,6 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   border-radius: 50%;
   background-color: var(--range-thumb-color);
   cursor: pointer;
-  transition: background-color var(--transition), transform var(--transition);
 }
 [type=range]::-moz-range-thumb {
   -webkit-appearance: none;
@@ -1584,7 +1573,6 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   border-radius: 50%;
   background-color: var(--range-thumb-color);
   cursor: pointer;
-  transition: background-color var(--transition), transform var(--transition);
 }
 [type=range]::-ms-thumb {
   -webkit-appearance: none;
@@ -1595,7 +1583,6 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   border-radius: 50%;
   background-color: var(--range-thumb-color);
   cursor: pointer;
-  transition: background-color var(--transition), transform var(--transition);
 }
 [type=range]:hover, [type=range]:focus {
   --range-border-color: var(--range-active-border-color);
@@ -1776,7 +1763,6 @@ details summary {
   line-height: 1rem;
   list-style-type: none;
   cursor: pointer;
-  transition: color var(--transition);
 }
 details summary:not([role]) {
   color: var(--accordion-close-summary-color);
@@ -1802,7 +1788,6 @@ details summary::after {
   background-size: 1rem auto;
   background-repeat: no-repeat;
   content: "";
-  transition: transform var(--transition);
 }
 details summary:focus {
   outline: none;
@@ -1945,7 +1930,6 @@ dialog article .close {
   background-size: auto 1rem;
   background-repeat: no-repeat;
   opacity: 0.5;
-  transition: opacity var(--transition);
 }
 dialog article .close:is([aria-current], :hover, :active, :focus) {
   opacity: 1;
@@ -1964,39 +1948,6 @@ dialog:not([open]), dialog[open=false] {
   pointer-events: auto;
 }
 
-:where(.modal-is-opening, .modal-is-closing) dialog,
-:where(.modal-is-opening, .modal-is-closing) dialog > article {
-  animation-duration: 0.2s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: both;
-}
-:where(.modal-is-opening, .modal-is-closing) dialog {
-  animation-duration: 0.8s;
-  animation-name: modal-overlay;
-}
-:where(.modal-is-opening, .modal-is-closing) dialog > article {
-  animation-delay: 0.2s;
-  animation-name: modal;
-}
-
-.modal-is-closing dialog,
-.modal-is-closing dialog > article {
-  animation-delay: 0s;
-  animation-direction: reverse;
-}
-
-@keyframes modal-overlay {
-  from {
-    backdrop-filter: none;
-    background-color: transparent;
-  }
-}
-@keyframes modal {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-}
 /**
  * Nav
  */
@@ -2240,7 +2191,6 @@ details[role=list] summary:not([role]) {
   color: var(--form-element-placeholder-color);
   line-height: inherit;
   cursor: pointer;
-  transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 details[role=list] summary:not([role]):active, details[role=list] summary:not([role]):focus {
   border-color: var(--form-element-active-border-color);
@@ -2446,128 +2396,6 @@ a[aria-busy=true] {
 [data-tooltip]:focus::before, [data-tooltip]:focus::after, [data-tooltip]:hover::before, [data-tooltip]:hover::after {
   opacity: 1;
 }
-@media (hover: hover) and (pointer: fine) {
-  [data-tooltip][data-placement=bottom]:focus::before, [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:hover [data-tooltip]:focus::before, [data-tooltip][data-placement=bottom]:hover [data-tooltip]:focus::after, [data-tooltip]:hover::before, [data-tooltip]:hover::after {
-    animation-duration: 0.2s;
-    animation-name: tooltip-slide-top;
-  }
-  [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:hover [data-tooltip]:focus::after, [data-tooltip]:hover::after {
-    animation-name: tooltip-caret-slide-top;
-  }
-  [data-tooltip][data-placement=bottom]:focus::before, [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:hover::before, [data-tooltip][data-placement=bottom]:hover::after {
-    animation-duration: 0.2s;
-    animation-name: tooltip-slide-bottom;
-  }
-  [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:hover::after {
-    animation-name: tooltip-caret-slide-bottom;
-  }
-  [data-tooltip][data-placement=left]:focus::before, [data-tooltip][data-placement=left]:focus::after, [data-tooltip][data-placement=left]:hover::before, [data-tooltip][data-placement=left]:hover::after {
-    animation-duration: 0.2s;
-    animation-name: tooltip-slide-left;
-  }
-  [data-tooltip][data-placement=left]:focus::after, [data-tooltip][data-placement=left]:hover::after {
-    animation-name: tooltip-caret-slide-left;
-  }
-  [data-tooltip][data-placement=right]:focus::before, [data-tooltip][data-placement=right]:focus::after, [data-tooltip][data-placement=right]:hover::before, [data-tooltip][data-placement=right]:hover::after {
-    animation-duration: 0.2s;
-    animation-name: tooltip-slide-right;
-  }
-  [data-tooltip][data-placement=right]:focus::after, [data-tooltip][data-placement=right]:hover::after {
-    animation-name: tooltip-caret-slide-right;
-  }
-}
-@keyframes tooltip-slide-top {
-  from {
-    transform: translate(-50%, 0.75rem);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, -0.25rem);
-    opacity: 1;
-  }
-}
-@keyframes tooltip-caret-slide-top {
-  from {
-    opacity: 0;
-  }
-  50% {
-    transform: translate(-50%, -0.25rem);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, 0rem);
-    opacity: 1;
-  }
-}
-@keyframes tooltip-slide-bottom {
-  from {
-    transform: translate(-50%, -0.75rem);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, 0.25rem);
-    opacity: 1;
-  }
-}
-@keyframes tooltip-caret-slide-bottom {
-  from {
-    opacity: 0;
-  }
-  50% {
-    transform: translate(-50%, -0.5rem);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, -0.3rem);
-    opacity: 1;
-  }
-}
-@keyframes tooltip-slide-left {
-  from {
-    transform: translate(0.75rem, -50%);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-0.25rem, -50%);
-    opacity: 1;
-  }
-}
-@keyframes tooltip-caret-slide-left {
-  from {
-    opacity: 0;
-  }
-  50% {
-    transform: translate(0.05rem, -50%);
-    opacity: 0;
-  }
-  to {
-    transform: translate(0.3rem, -50%);
-    opacity: 1;
-  }
-}
-@keyframes tooltip-slide-right {
-  from {
-    transform: translate(-0.75rem, -50%);
-    opacity: 0;
-  }
-  to {
-    transform: translate(0.25rem, -50%);
-    opacity: 1;
-  }
-}
-@keyframes tooltip-caret-slide-right {
-  from {
-    opacity: 0;
-  }
-  50% {
-    transform: translate(-0.05rem, -50%);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-0.3rem, -50%);
-    opacity: 1;
-  }
-}
 
 /**
  * Accessibility & User interaction
@@ -2606,22 +2434,6 @@ textarea,
   direction: rtl;
 }
 
-/**
-* Reduce Motion Features
-*/
-@media (prefers-reduced-motion: reduce) {
-  *:not([aria-busy=true]),
-  :not([aria-busy=true])::before,
-  :not([aria-busy=true])::after {
-    background-attachment: initial !important;
-    animation-duration: 1ms !important;
-    animation-delay: -1ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-delay: 0s !important;
-    transition-duration: 0s !important;
-  }
-}
 .error h1, .error h2 {
   --color: #dc3545;
 }
@@ -2634,4 +2446,37 @@ body > main {
 }
 body > footer {
   padding: 1rem 0;
+}
+
+/*
+    Show loading indicator on div or on button
+*/
+button.htmx-request,
+div.htmx-indicator {
+  pointer-events: none;
+}
+button.htmx-request::before,
+div.htmx-indicator::before {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 0.1875em solid currentColor;
+  border-radius: 1em;
+  border-right-color: transparent;
+  content: "";
+  vertical-align: text-bottom;
+  vertical-align: -0.125em;
+  animation: spinner 0.75s linear infinite;
+  opacity: var(--loading-spinner-opacity);
+}
+button.htmx-request:not(:empty)::before,
+div.htmx-indicator:not(:empty)::before {
+  margin-right: calc(var(--spacing) * 0.5);
+  margin-left: 0;
+  margin-inline-start: 0;
+  margin-inline-end: calc(var(--spacing) * 0.5);
+}
+button.htmx-request:empty,
+div.htmx-indicator:empty {
+  text-align: center;
 }

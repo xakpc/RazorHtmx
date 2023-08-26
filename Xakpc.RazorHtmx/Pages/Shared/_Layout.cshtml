@@ -1,35 +1,45 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - Xakpc.RazorHtmx</title>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Xakpc.RazorHtmx.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    @await RenderSectionAsync("Styles", false)
+
 </head>
 <body>
-    <nav class="container-fluid">
-        <ul>
-            <li><strong><a asp-area="" asp-page="/Index">Xakpc.RazorHtmx</a></strong></li>
-        </ul>
-        <ul>
-            <li><a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a></li>
-            <li> <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a></li>
-        </ul>
-    </nav>
+<nav class="container-fluid">
+    <ul>
+        <li>
+            <strong>
+                <a asp-area="" asp-page="/Index">Xakpc.RazorHtmx</a>
+            </strong>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+        </li>
+        <li>
+            <a class="nav-link text-dark" href="https://xakpc.info" role="button" class="outline">Read the Blog Post</a>
+        </li>
+    </ul>
+</nav>
 
-    <main class="container">
-        @RenderBody()
-    </main>
+<main class="container">
+    @RenderBody()
+</main>
 
-    <footer class="container-fluid">
-        <small>
-            &copy; 2023 - Xakpc.RazorHtmx - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </small>
-    </footer>
+<footer class="container-fluid">
+    <small>
+        &copy; 2023 - Xakpc.RazorHtmx - by <a href="https://x.com/xakpc">@@xakpc</a>
+    </small>
+</footer>
 
-    <script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/js/htmx.min.js" asp-append-version="true"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
 
-    @await RenderSectionAsync("Scripts", required: false)
+@await RenderSectionAsync("Scripts", false)
 </body>
 </html>

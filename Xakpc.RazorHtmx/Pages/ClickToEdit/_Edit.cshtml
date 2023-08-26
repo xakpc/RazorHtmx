@@ -1,0 +1,22 @@
+﻿@model Xakpc.RazorHtmx.Data.UserInfoViewModel
+
+<form hx-put="@Url.Page("ClickToEdit", "Edit")"
+      hx-headers='{"RequestVerificationToken": "@Model.AntiforgeryToken"}'
+      hx-target="this" hx-swap="outerHTML">
+
+    <input asp-for="Id" type="hidden"/>
+
+    <label asp-for="@Model.FirstName"></label>
+    <input asp-for="@Model.FirstName" type="text" required/>
+
+    <label asp-for="@Model.LastName"></label>
+    <input asp-for="@Model.LastName" type="text" required/>
+
+    <label asp-for="@Model.Email"></label>
+    <input asp-for="@Model.Email" type="email" required/>
+
+    <div class="grid">
+        <button>Submit</button>
+        <button hx-get="@Url.Page("ClickToEdit", "Partial", new { id = Model.Id })" class="secondary">Cancel</button>
+    </div>
+</form>

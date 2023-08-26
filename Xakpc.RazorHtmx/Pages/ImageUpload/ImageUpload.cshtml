@@ -1,0 +1,30 @@
+﻿@page "/image-upload"
+@model ImageUploadModel
+@{
+}
+
+<article>
+    <h1>Jpeg Upload</h1>
+
+    <div id="image"></div>
+
+    <form id="form"
+          hx-encoding="multipart/form-data"
+          hx-post="@Url.Page("ImageUpload")"
+          hx-target="#image"
+          hx-swap="innerHTML"
+          asp-antiforgery="true">
+        <input type="file" name="file" accept="image/jpeg">
+        <button>Upload</button>
+        <progress id="progress" value="0" max="100"></progress>
+    </form>
+</article>
+
+@section Scripts
+{
+    <script>
+        htmx.on('#form', 'htmx:xhr:progress', function (evt) {
+            htmx.find('#progress').setAttribute('value', evt.detail.loaded / evt.detail.total * 100)
+        });
+    </script>
+}

@@ -1,0 +1,16 @@
+﻿@page "/value-select"
+@model ValueSelectModel
+
+<article>
+    <label>Pick A Make/Model</label>
+    <select name="make" asp-items="Model.Makes"
+            hx-get="@Url.Handler("Models")"
+            hx-target="#models"
+            hx-indicator=".htmx-indicator">
+    </select>
+
+    <label>Model <span class="htmx-indicator" aria-busy="true"></span></label>
+    <select id="models" name="model">
+        <partial name="_SelectPartial" model="Model.Dict.Values.First()"/>
+    </select>
+</article>

@@ -1,0 +1,20 @@
+﻿@page "/file-upload"
+@model FileUploadModel
+
+<article>
+    <h1>File Upload</h1>
+    <form id="form" hx-encoding="multipart/form-data" hx-post="@Url.Page("FileUpload")" asp-antiforgery="true">
+        <input type="file" name="file">
+        <button>Upload</button>
+        <progress id="progress" value="0" max="100"></progress>
+    </form>
+</article>
+
+@section Scripts
+{
+    <script>
+        htmx.on('#form', 'htmx:xhr:progress', function(evt) {
+          htmx.find('#progress').setAttribute('value', evt.detail.loaded/evt.detail.total * 100)
+        });
+    </script>
+}

@@ -1,0 +1,18 @@
+﻿@model Xakpc.RazorHtmx.Data.UserInfoViewModel
+
+<tr>
+    <td>
+        <input type="text" asp-for="@Model.FirstName"/>
+    </td>
+    <td>
+        <input type="email" asp-for="@Model.Email"/>
+    </td>
+    <td>
+        <button hx-get="@Url.Handler("Item", new { id = Model.Id })" class="secondary" style="margin-bottom: 6px;">
+            Cancel
+        </button>
+        <button hx-put="@Url.Handler("Item", new { id = Model.Id })" hx-include="closest tr" antiforgery="true">
+            Save
+        </button>
+    </td>
+</tr>

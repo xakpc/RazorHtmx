@@ -1,0 +1,11 @@
+﻿@page "/tabs-hateoas"
+@model TabsModel
+@{
+}
+
+<div id="tabs"
+     hx-get="@Url.Handler("Tab1")"
+     hx-trigger="load delay:100ms"
+     hx-target="#tabs"
+     hx-swap="innerHTML">
+</div>

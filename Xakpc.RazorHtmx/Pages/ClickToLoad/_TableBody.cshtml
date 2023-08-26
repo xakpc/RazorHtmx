@@ -1,0 +1,19 @@
+﻿@model PagedTableViewModel
+
+@foreach (var userInfo in Model.Users)
+{
+    <tr>
+        <td>@userInfo.FirstName @userInfo.LastName</td>
+        <td>@userInfo.Email</td>
+        <td>@userInfo.RowId.ToString("N").ToUpperInvariant()</td>
+    </tr>
+}
+<tr id="replaceMe">
+    <td colspan="3">
+        <button class="outline" hx-get="@Url.Page("ClickToLoad", "Page", new { page = Model.Page + 1 })"
+                hx-target="#replaceMe"
+                hx-swap="outerHTML">
+            Load More Agents...
+        </button>
+    </td>
+</tr>

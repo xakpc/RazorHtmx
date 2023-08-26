@@ -1,0 +1,24 @@
+﻿@page
+@model InfiniteScrollModel
+
+<article>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>RowId</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        @await Html.PartialAsync("_TableBody", Model.UsersTable)
+        </tbody>
+        <tfoot id="ind" class="htmx-indicator">
+        <tr>
+            <td colspan="3">
+                <div aria-busy="true"></div>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</article>

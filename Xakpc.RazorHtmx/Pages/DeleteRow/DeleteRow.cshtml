@@ -1,0 +1,37 @@
+﻿@page "delete-row"
+@model DeleteRowModel
+@{
+}
+
+<article>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody hx-confirm="Are you sure?" hx-target="closest tr" hx-swap="outerHTML swap:1s">
+        @foreach (var userInfo in Model.Users)
+        {
+            @await Html.PartialAsync("_TableRow", userInfo)
+        }
+        </tbody>
+    </table>
+</article>
+
+@section Styles
+{
+    <style>
+        tr.htmx-swapping td {
+            opacity: 0;
+            transition: opacity 1s ease-out;
+        }
+
+        button {
+            margin-bottom: 0px;
+        }
+    </style>
+}

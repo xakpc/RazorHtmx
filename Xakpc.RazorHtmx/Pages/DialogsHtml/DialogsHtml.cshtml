@@ -1,0 +1,35 @@
+﻿@page "/dialogs-html"
+@model DialogsHtmlModel
+
+<!-- The Dialog -->
+<dialog id="myDialog">
+    <article id="dialogContent">
+    </article>
+</dialog>
+
+<article>
+    <!-- Trigger buttons -->
+    <button data-target="myDialog"
+            hx-get="@Url.Handler("Modal")"
+            hx-target="#dialogContent"
+            hx-trigger="click"
+            onClick="showDialog()">
+        Show Dialog
+    </button>
+</article>
+
+@section Scripts
+{
+    <script>
+        function showDialog() {
+            const dialog = document.getElementById('myDialog');
+            dialog.showModal(); // Opens the dialog
+        }
+
+        function closeDialog() {
+            const dialog = document.getElementById('myDialog');
+            dialog.close(); // Closes the dialog
+        }
+    </script>
+
+}

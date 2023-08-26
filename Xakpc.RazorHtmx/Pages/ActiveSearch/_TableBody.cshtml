@@ -1,0 +1,10 @@
+﻿@model List<Xakpc.RazorHtmx.Data.UserInfoViewModel>
+
+@foreach (var userInfo in Model)
+{
+    <tr>
+        <td>@userInfo.FirstName</td>
+        <td>@userInfo.LastName</td>
+        <td>@userInfo.Email</td>
+    </tr>
+}

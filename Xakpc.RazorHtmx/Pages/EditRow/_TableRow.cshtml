@@ -1,0 +1,12 @@
+﻿@model Xakpc.RazorHtmx.Data.UserInfoViewModel
+
+
+<tr>
+    <td>@Model.FirstName</td>
+    <td>@Model.Email</td>
+    <td>
+        <button class="outline" hx-get="@Url.Handler("EditItem", new { id = Model.Id })">
+            Edit
+        </button>
+    </td>
+</tr>

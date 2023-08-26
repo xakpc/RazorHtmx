@@ -1,0 +1,6 @@
+﻿@model (string Title, string Button)
+
+<h6>@Model.Title</h6>
+<button hx-get="@Url.Handler("NewContent")" hx-swap="innerHTML transition:true" hx-target="closest div">
+    @Model.Button
+</button>
