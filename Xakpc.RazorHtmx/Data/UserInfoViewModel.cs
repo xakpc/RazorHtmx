@@ -20,7 +20,5 @@ namespace Xakpc.RazorHtmx.Data
         public string? Status { get; set; }
 
         public Guid RowId { get; set; } = Guid.Empty;
-
-        public string? AntiforgeryToken { get; set; }
     }
 }

@@ -26,6 +26,4 @@ public class ActiveSearchModel : PageModel
 
         return Partial("_TableBody", TestData.Users.Take(7).ToList());
     }
-
-    public record SearchRequest(string Search);
 }

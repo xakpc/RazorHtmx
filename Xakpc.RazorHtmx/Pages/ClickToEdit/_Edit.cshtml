@@ -1,9 +1,9 @@
 ﻿@model Xakpc.RazorHtmx.Data.UserInfoViewModel
 
 <form hx-put="@Url.Page("ClickToEdit", "Edit")"
-      hx-headers='{"RequestVerificationToken": "@Model.AntiforgeryToken"}'
       hx-target="this" hx-swap="outerHTML">
 
+    @Html.AntiForgeryToken()
     <input asp-for="Id" type="hidden"/>
 
     <label asp-for="@Model.FirstName"></label>

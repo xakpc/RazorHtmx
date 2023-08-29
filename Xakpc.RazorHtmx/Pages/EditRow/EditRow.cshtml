@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "/edit-row"
 @model EditRowModel
 @{
 }
@@ -15,7 +15,7 @@
         <tbody hx-target="closest tr" hx-swap="outerHTML">
         @foreach (var userInfo in Model.Users)
         {
-            @await Html.PartialAsync("_TableRow", userInfo)
+            <partial name="_TableRow" model="userInfo"/>
         }
         </tbody>
     </table>

@@ -6,7 +6,7 @@
     <title>@ViewData["Title"] - Xakpc.RazorHtmx</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     @await RenderSectionAsync("Styles", false)
-
+    <script src="~/js/htmx.min.js" asp-append-version="true"></script>
 </head>
 <body>
     <nav class="container-fluid">
@@ -22,7 +22,7 @@
                 <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
             </li>
             <li>
-                <a class="nav-link text-dark" href="https://xakpc.info" role="button" class="outline">Read the Blog Post</a>
+                <a class="nav-link text-dark" href="https://xakpc.info/htmx-dotnet" role="button" class="outline">Read the Blog Post</a>
             </li>
         </ul>
     </nav>
@@ -42,7 +42,7 @@
 
     </footer>
 
-    <script src="~/js/htmx.min.js" asp-append-version="true"></script>
+
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", false)

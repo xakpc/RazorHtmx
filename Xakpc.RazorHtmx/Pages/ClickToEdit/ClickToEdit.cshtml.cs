@@ -5,18 +5,8 @@ using Xakpc.RazorHtmx.Data;
 
 namespace Xakpc.RazorHtmx.Pages.ClickToEdit;
 
-//[IgnoreAntiforgeryToken(Order = 1001)]
 public class ClickToEditModel : PageModel
 {
-    private readonly IAntiforgery _antiforgery;
-
-    public ClickToEditModel(IAntiforgery antiforgery)
-    {
-        _antiforgery = antiforgery;
-    }
-
-    public string? Token { get; set; }
-
     public UserInfoViewModel UserInfoViewModel { get; set; }
 
     public void OnGet()
@@ -33,7 +23,6 @@ public class ClickToEditModel : PageModel
     public IActionResult OnGetEdit(int id)
     {
         UserInfoViewModel = GetUserInfo(id);
-        UserInfoViewModel.AntiforgeryToken = _antiforgery.GetAndStoreTokens(HttpContext).RequestToken;
         return Partial("_Edit", UserInfoViewModel);
     }
 
