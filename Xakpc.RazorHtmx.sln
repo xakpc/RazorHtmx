@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xakpc.RazorHtmx", "Xakpc.RazorHtmx\Xakpc.RazorHtmx.csproj", "{0BDB1BC3-7604-4E73-A2DD-84D5105FAB98}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xakpc.MinimalApiHtmx", "Xakpc.MinimalApiHtmx\Xakpc.MinimalApiHtmx.csproj", "{220ED9BB-327A-4CA9-9CA2-4F6D1356F0FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,18 @@ Global
 		{0BDB1BC3-7604-4E73-A2DD-84D5105FAB98}.Release|arm64.Build.0 = Release|Any CPU
 		{0BDB1BC3-7604-4E73-A2DD-84D5105FAB98}.Release|x86.ActiveCfg = Release|Any CPU
 		{0BDB1BC3-7604-4E73-A2DD-84D5105FAB98}.Release|x86.Build.0 = Release|Any CPU
+		{220ED9BB-327A-4CA9-9CA2-4F6D1356F0FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{220ED9BB-327A-4CA9-9CA2-4F6D1356F0FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{220ED9BB-327A-4CA9-9CA2-4F6D1356F0FF}.Debug|arm64.ActiveCfg = Debug|Any CPU
+		{220ED9BB-327A-4CA9-9CA2-4F6D1356F0FF}.Debug|arm64.Build.0 = Debug|Any CPU
+		{220ED9BB-327A-4CA9-9CA2-4F6D1356F0FF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{220ED9BB-327A-4CA9-9CA2-4F6D1356F0FF}.Debug|x86.Build.0 = Debug|Any CPU
+		{220ED9BB-327A-4CA9-9CA2-4F6D1356F0FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{220ED9BB-327A-4CA9-9CA2-4F6D1356F0FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{220ED9BB-327A-4CA9-9CA2-4F6D1356F0FF}.Release|arm64.ActiveCfg = Release|Any CPU
+		{220ED9BB-327A-4CA9-9CA2-4F6D1356F0FF}.Release|arm64.Build.0 = Release|Any CPU
+		{220ED9BB-327A-4CA9-9CA2-4F6D1356F0FF}.Release|x86.ActiveCfg = Release|Any CPU
+		{220ED9BB-327A-4CA9-9CA2-4F6D1356F0FF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
