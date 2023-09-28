@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Xakpc.RazorHtmx.Data;
@@ -15,12 +16,18 @@ public class InfiniteScrollModel : PageModel
         UsersTable = new PagedTableViewModel(TestData.Users.Take(PageSize).ToList(), 0);
     }
 
-    public async Task<IActionResult> OnGetPageAsync(int page)
+    public async Task<IActionResult> OnGetPageAsync(int pageNumber)
     {
         await Task.Delay(1000);
 
-        var data = TestData.Users.GetRange(page * PageSize, PageSize);
-        UsersTable = new PagedTableViewModel(data, page);
+        int index = pageNumber * PageSize;
+        if (index >= TestData.Users.Count)
+        {
+            return new NoContentResult();
+        }
+
+        var data = TestData.Users.GetRange(index, PageSize);
+        UsersTable = new PagedTableViewModel(data, pageNumber);
 
         return Partial("_TableBody", UsersTable);
     }

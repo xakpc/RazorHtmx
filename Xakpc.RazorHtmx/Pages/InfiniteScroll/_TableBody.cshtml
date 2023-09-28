@@ -4,7 +4,7 @@
 {
     @if (userInfo == Model.Users.Last())
     {
-        <tr hx-get="@Url.Page("InfiniteScroll", "Page", new { page = Model.Page + 1 })"
+        <tr hx-get="@Url.Page("InfiniteScroll", "Page", new { pageNumber = Model.Page + 1 })"
             hx-trigger="revealed"
             hx-swap="afterend"
             hx-indicator="#ind">
