@@ -7,7 +7,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/xakpc/RazorHtmx/">
-    <img src="https://github.com/xakpc/RazorHtmx/assets/6075374/2cf36dff-78b9-4199-8d22-a649ebf174fe" alt="Logo" height="200">
+    <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1718203714390/aC3mvO0tH.png?w=800&fit=crop&crop=entropy&auto=compress,format&format=webp" alt="Logo" height="300">
   </a>
 
 <!--<h3 align="center">htmx 🤝 dotnet</h3>-->
