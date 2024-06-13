@@ -56,7 +56,7 @@ Author - [@xakpc](https://x.com/xakpc)
 
 Project Link: [https://github.com/xakpc/RazorHtmx](https://github.com/xakpc/RazorHtmx)
 
-Website: [https://openpost.email](https://xakpc.info/htmx-dotnet)
+Website: [https://xakpc.info/htmx-dotnet](https://xakpc.info/series/htmx-dotnet)
 
 <a href="https://htmx.org/">
 <img src="https://htmx.org/img/createdwith.jpeg" alt="built with htnx">
