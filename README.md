@@ -15,7 +15,7 @@
   <p align="center">
     <a href="https://htmx.org/"/>htmx<a> is a great fit for dotnet - but not every dotnet stack is the best fit for htmx. <br /> In this repo, I'm exploring how various techs work with htmx.
     <br />
-    <a href="https://xakpc.info/htmx-dotnet"><strong>Read the article »</strong></a>
+    <a href="https://xakpc.info/series/htmx-dotnet"><strong>Read the series »</strong></a>
   </p>
 </div>
 
