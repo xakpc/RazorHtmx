@@ -1,0 +1,28 @@
+﻿@model Xakpc.RazorHtmx.Validation.UserRegistrationForm
+
+<p>Your registration was successful. Here are the details you provided:</p>
+
+<div>
+    <strong>First Name:</strong> @Model.FirstName
+</div>
+<div>
+    <strong>Last Name:</strong> @Model.LastName
+</div>
+<div>
+    <strong>Email Address:</strong> @Model.Email
+</div>
+<div>
+    <strong>Password:</strong> @Model.Password
+</div>
+<div>
+    <strong>Confirm Password:</strong> @Model.ConfirmPassword
+</div>
+<div>
+    <strong>Phone Number:</strong> @Model.PhoneNumber
+</div>
+<div>
+    <strong>Age:</strong> @Model.Age
+</div>
+<div>
+    <strong>Date of Birth:</strong> @Model.DateOfBirth.ToShortDateString()
+</div>

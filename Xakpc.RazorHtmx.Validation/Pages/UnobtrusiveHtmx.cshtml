@@ -1,0 +1,52 @@
+﻿@page
+@model Xakpc.RazorHtmx.Validation.Pages.UnobtrusiveHtmxModel
+@{
+    ViewData["Title"] = "User Registration";
+    ViewData["Handler"] = Url.Page("UnobtrusiveHtmx");
+    ViewData["Trigger"] = "valid-form";
+}
+
+<hgroup>
+    <h2>User Registration - Unobtrusive htmx</h2>
+    <p>htmx form submit with <mark>jquery.validate.unobtrusive</mark> validation</p>
+</hgroup>
+
+<article>
+    <partial name="_Form" model="Model.UserRegistration" view-data="ViewData" />
+</article>
+
+@section Scripts {
+    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        $(document).ready(function () {
+            $('form').on('submit', function (e) {
+                console.log('form submit');
+                var form = $(this);
+                if (form.valid()) {
+                    // Form is valid, allow htmx to handle the submission
+                    htmx.trigger("form", "valid-form");
+                    e.preventDefault();                    
+                    return true;
+                } else {
+                    // Form is invalid, prevent htmx from submitting the form
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
+            $(document).on('htmx:beforeSwap', function (event) {
+                var evt = event.originalEvent; // Get the original event details
+                if (evt.detail.xhr.status === 422) {
+                    // Allow 422 responses to swap as we are using this as a signal that
+                    // a form was submitted with bad data and want to rerender with the errors
+                    //
+                    // Set isError to false to avoid error logging in console
+                    evt.detail.shouldSwap = true;
+                    evt.detail.isError = false;
+                }
+            });
+        });
+    </script>
+}

@@ -39,6 +39,7 @@ This tends to keep Razor Pages and its handlers smaller and more focused while a
 
 - [RazorHtmx](https://github.com/xakpc/RazorHtmx/tree/master/Xakpc.RazorHtmx): usage of htmx with razor pages, reproduce of default htmx examples
 - [MinimalAPIHtmx](https://github.com/xakpc/RazorHtmx/tree/master/Xakpc.MinimalApiHtmx): usage of htmx with Minimal API
+- [RazorHtmx.Validation](https://github.com/xakpc/RazorHtmx/tree/master/Xakpc.RazorHtmx.Validation): exploration of various validation techniques with htmx
 
 <!-- LICENSE -->
 ## License

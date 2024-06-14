@@ -1,0 +1,21 @@
+﻿@page
+@model Xakpc.RazorHtmx.Validation.Pages.RazorPageFormModel
+
+@{
+    ViewData["Title"] = "User Registration";
+}
+
+<hgroup>
+    <h2>User Registration - Unobtrusive</h2>
+    <p>Regular POST of the form with <mark>jquery.validate.unobtrusive</mark> validation</p>
+</hgroup>
+
+<article>
+    <form method="post">
+        <partial name="_FormContent" model="Model.UserRegistration" />
+    </form>
+</article>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

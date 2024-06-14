@@ -1,0 +1,17 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to validation</h1>
+    <p>I explored different validation in Razor Pages and how they could be fit together with htmx</p>
+
+    <ul>
+        <li><a asp-area="" asp-page="/RazorPageForm">Unobtrusive</a> - <kbd>jquery-3.3.2.js + jquery.validate.js + jquery.validate.unobtrusive.js</kbd> validation, built in into ASP.NET and Razor Pages and used by default.</li>
+        <li><a asp-area="" asp-page="/Html5Form">HTML5</a> - built-in HTML validation available by default.</li>
+        <li><a asp-area="" asp-page="/UnobtrusiveHtmx">Unobtrusive + Htmx</a> - <kbd>jquery.validate.unobtrusive.js</kbd> validation attached to htmx.</li>
+        <li><a asp-area="" asp-page="/Html5Htmx">HTML5 + Htmx</a> - built-in HTML validation used with htmx.</li>
+    </ul>
+</div>

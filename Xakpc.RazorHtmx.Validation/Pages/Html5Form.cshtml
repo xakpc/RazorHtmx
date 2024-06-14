@@ -1,0 +1,62 @@
+﻿@page
+
+@model Xakpc.RazorHtmx.Validation.Pages.Html5FormModel
+@{
+    ViewData["Title"] = "User Registration";
+    ViewContext.ClientValidationEnabled = false;
+}
+
+<hgroup>
+    <h2>User Registration - HTML5</h2>
+    <p>Regular POST of the form with <mark>HTML5</mark> validation</p>
+</hgroup>
+
+<article>
+    <form method="post">
+        <partial name="_FormContent" model="@Model.UserRegistration" />
+    </form>
+</article>
+
+@section Scripts
+{
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const inputs = document.querySelectorAll('input'); 
+
+            inputs.forEach(function (input) {
+                // Check if the input has any data-err-* attributes
+                if (input.dataset.errRequired ||
+                    input.dataset.errLength ||
+                    input.dataset.errMinmax) {
+
+                    input.addEventListener('invalid', function (event) {
+                        const target = event.target;
+                        let customMessage = '';
+
+                        if (target.validity.valueMissing && target.dataset.errRequired) {
+                            customMessage = target.dataset.errRequired;
+                        } else if ((target.validity.tooLong || target.validity.tooShort) && target.dataset.errLength) {
+                            customMessage = target.dataset.errLength;
+                        } else if ((target.validity.rangeUnderflow || target.validity.rangeOverflow) && target.dataset.errMinmax) {
+                            customMessage = target.dataset.errMinmax;
+                        }
+
+                        target.setCustomValidity(customMessage);
+                    });
+
+                    input.addEventListener('input', function (event) {
+                        const target = event.target;
+                        target.setCustomValidity(''); // Clear custom message on input
+
+                        // Set aria-invalid based on validity
+                        if (target.validity.valid && target.value !== '') {
+                            target.setAttribute('aria-invalid', 'false');
+                        } else {
+                            target.setAttribute('aria-invalid', 'true');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

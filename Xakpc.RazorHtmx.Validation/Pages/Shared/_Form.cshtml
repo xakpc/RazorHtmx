@@ -1,0 +1,10 @@
+﻿@model Xakpc.RazorHtmx.Validation.UserRegistrationForm
+
+@{
+    var handler = (string)ViewData["Handler"];
+    var trigger = (ViewData["Trigger"] as string) ?? "submit";
+}
+
+<form method="post" hx-post="@handler" hx-swap="outerHtml" hx-trigger="@trigger">
+    <partial name="_FormContent" model="@Model" />
+</form>

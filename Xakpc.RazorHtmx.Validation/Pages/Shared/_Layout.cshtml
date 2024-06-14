@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>@ViewData["Title"] - Xakpc.RazorHtmx.Validation</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Xakpc.RazorHtmx.Validation.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@picocss/pico@@2/css/pico.min.css" />
+</head>
+<body>
+    <header class="container">
+        <nav>
+            <ul>
+                <li><strong>Validate This</strong></li>
+            </ul>
+            <ul>
+                <li><a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a></li>
+                <li><a class="nav-link text-dark" asp-area="" asp-page="/RazorPageForm">Unobtrusive</a></li>
+                <li><a class="nav-link text-dark" asp-area="" asp-page="/Html5Form">HTML5</a></li>
+                <li><a class="nav-link text-dark" asp-area="" asp-page="/UnobtrusiveHtmx">Unobtrusive + Htmx</a></li>
+                <li><a class="nav-link text-dark" asp-area="" asp-page="/Html5Htmx">HTML5 + Htmx</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        @RenderBody()
+    </main>
+
+    <footer class="container">
+            &copy; 2024 - Xakpc.RazorHtmx.Validation
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
