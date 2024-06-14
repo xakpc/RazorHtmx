@@ -1,0 +1,52 @@
+﻿@page
+@model Xakpc.RazorHtmx.Validation.Pages.HypermediaFormModel
+
+@{
+    ViewData["Title"] = "User Registration";
+    ViewData["Handler"] = Url.Page("Html5Htmx");
+    ViewContext.ClientValidationEnabled = false;
+}
+
+<hgroup>
+    <h2>User Registration - HTML5 with htmx</h2>
+    <p>htmx form submit with <mark>HTML5</mark> validation</p>
+</hgroup>
+
+<article>
+    <partial name="_HypermediaForm" model="@Model.UserRegistration" view-data="ViewData" />
+</article>
+
+@section Scripts
+{
+    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+
+    <script>
+        function setCustomValidity(target) {
+            let customMessage = '';
+
+            if (target.validity.valueMissing && target.dataset.errRequired) {
+                customMessage = target.dataset.errRequired;
+            } else if ((target.validity.tooLong || target.validity.tooShort) && target.dataset.errLength) {
+                customMessage = target.dataset.errLength;
+            } else if ((target.validity.rangeUnderflow || target.validity.rangeOverflow) && target.dataset.errMinmax) {
+                customMessage = target.dataset.errMinmax;
+            }
+
+            target.setCustomValidity(customMessage);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.addEventListener('htmx:beforeSwap', function (evt) {
+                if (evt.detail.xhr.status === 422) {
+                    // allow 422 responses to swap as we are using this as a signal that
+                    // a form was submitted with bad data and want to rerender with the
+                    // errors
+                    //
+                    // set isError to false to avoid error logging in console
+                    evt.detail.shouldSwap = true;
+                    evt.detail.isError = false;
+                }
+            });
+        });
+    </script>
+}
